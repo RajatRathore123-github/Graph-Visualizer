@@ -1,8 +1,8 @@
 // Creating object and its properties : x,y,isstarting,istarget,iswall and weight
 
-import React from 'react'
 
-export const startingGrid = (width,height) => {
+
+export function getGrid(width,height){
 
     let grid = [];
     for(let i = 0 ; i < height ; i++){
@@ -12,10 +12,11 @@ export const startingGrid = (width,height) => {
         }
         grid.push(local);
     }
-  return (
-    <>
-     
-    </>
-  )
+
+    grid[Math.floor(height/2)][Math.floor(width/2)].isStart = true;
+    grid[height-2][width-2].isTarget = true;
+
+    return grid;
+  
 }
 
